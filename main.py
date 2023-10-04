@@ -3,14 +3,15 @@ import os
 import interactions
 import json
 
+from discord import app_commands
 from discord.ext import commands
 from pathlib import Path
 from dotenv import load_dotenv
 
 
-class MyClient(discord.Client):
+class MyClient(commands.Bot):
     def __init__(self, intents) -> None:
-        super().__init__(intents=intents)
+        super().__init__(token=os.getenv("TOKEN"))
 
     async def on_ready(self) -> None:
         print(f'Logged on as {self.user}!')
@@ -22,6 +23,9 @@ class MyClient(discord.Client):
         await message.channel.send("Hello World!")
 
 
+class Bot:
+    pass
+
 class Main:
     @staticmethod
     def run() -> None:
@@ -31,7 +35,7 @@ class Main:
         intents.message_content = True
 
         client = MyClient(intents)
-        client.run(os.getenv("TOKEN"))
+        client.start()
 
 
 if __name__ == '__main__':
