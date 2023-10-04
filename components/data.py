@@ -15,7 +15,7 @@ class Data:
     def get_cwd() -> str:
         return Data.__cwd
 
-    def get_previous_deleted_message() -> object:
+    def get_previous_deleted_message() -> str:
         return Data.__previous_deleted_message
 
     def set_previous_deleted_message(message_content: str) -> None:
