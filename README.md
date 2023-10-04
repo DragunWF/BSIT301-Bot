@@ -2,12 +2,17 @@
 
 ## Description
 
-This bot is for my college section's Discord server.
+This bot is for my college section's Discord server. Furthermore, this bot also uses **slash commands**.
 
 ## Features
 
 - Message Sniping
-- Google Forms Responses - _To be implemented_
-- Notes Sender - _To be implemented_
-- RNG Games with leaderboards - _To be implemented_
+- Google Forms Responses - `To be implemented`
+- Notes Sender - `To be implemented`
+- RNG Games with leaderboards - `To be implemented`
 - _More will be added_
+
+## Commands
+
+- `test` - For testing purposes, the bot simply responds with a text
+- `snipe` - To snipe deleted messages
