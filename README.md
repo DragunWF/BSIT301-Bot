@@ -9,4 +9,5 @@ This bot is for my college section's Discord server.
 - Message Sniping
 - Google Forms Responses - _To be implemented_
 - Notes Sender - _To be implemented_
+- RNG Games with leaderboards - _To be implemented_
 - _More will be added_
