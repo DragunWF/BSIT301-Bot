@@ -1,9 +1,18 @@
 import discord
 import os
+import interactions
+import json
+
+from discord.ext import commands
+from discord_slash import SlashCommand
+from pathlib import Path
 from dotenv import load_dotenv
 
 
 class MyClient(discord.Client):
+    def __init__(self, intents):
+        super().__init__(intents=intents)
+
     async def on_ready(self):
         print(f'Logged on as {self.user}!')
 
@@ -17,11 +26,12 @@ class MyClient(discord.Client):
 class Main:
     @staticmethod
     def run():
-        intents = discord.Intents.default()
-        intents.message_content = True
         load_dotenv()
 
-        client = MyClient(intents=intents)
+        intents = discord.Intents.default()
+        intents.message_content = True
+
+        client = MyClient(intents)
         client.run(os.getenv("TOKEN"))
 
 
