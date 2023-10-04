@@ -1,5 +1,5 @@
 from components.bot import Bot
-import components.commands
+import components.commands  # To load the commands
 
 
 class Main:
