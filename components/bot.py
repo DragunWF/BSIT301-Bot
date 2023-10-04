@@ -1,9 +1,7 @@
 import os
 import discord
-import json
 
 from dotenv import load_dotenv
-from pathlib import Path
 from components.data import Data
 
 client = discord.Bot(intents=discord.Intents.all())
@@ -26,13 +24,9 @@ class Bot:
 
     @client.event
     async def on_message_delete(message):
-        print("delete message event")
-        print(message)
         if message.author == client.user:
             return
-        print("down here")
-        Data.set_previous_deleted_message(message.content)
-        print(Data.get_previous_deleted_message())
+        Data.set_deleted_message(message.content, message.author.name)
 
     @client.event
     async def on_message_edit(before, after):
