@@ -5,7 +5,7 @@ from discord import Option
 from dotenv import load_dotenv
 from components.data import Data
 
-bot_guilds = Data.settings
+bot_guilds = Data.get_settings()["guilds"]
 bot = discord.Bot()
 
 

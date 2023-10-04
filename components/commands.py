@@ -3,7 +3,7 @@ from .data import Data
 
 
 class Commands:
-    __guilds = Data.settings["guilds"]
+    __guilds = Data.get_settings()["guilds"]
 
     @client.slash_command(guild_ids=__guilds)
     async def test(ctx):
