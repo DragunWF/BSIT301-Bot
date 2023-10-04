@@ -9,3 +9,13 @@ class Commands:
     async def test(ctx):
         print(ctx)
         await ctx.respond("Why hello there!")
+
+    @client.slash_command(guild_ids=__guilds)
+    async def snipe(ctx):
+        # barebones functionality
+        # TODO: add more like embed messages and show message author
+        deleted_message = Data.get_previous_deleted_message()
+        if deleted_message is None:
+            await ctx.respond(f"Deleted Message: {deleted_message}")
+        else:
+            await ctx.respond("There are no deleted messages recorded!")
