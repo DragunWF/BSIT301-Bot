@@ -1,5 +1,8 @@
+import discord
+
 from .bot import client
 from .data import Data
+from datetime import datetime
 
 
 class Commands:
@@ -12,10 +15,17 @@ class Commands:
 
     @client.slash_command(guild_ids=__guilds)
     async def snipe(ctx):
-        # barebones functionality
-        # TODO: add more like embed messages and show message author
-        deleted_message = Data.get_previous_deleted_message()
-        if deleted_message is None:
+        deleted_message = Data.get_deleted_message()
+        if deleted_message["content"] is None:
             await ctx.respond("There are no deleted messages recorded!")
         else:
-            await ctx.respond(f"Deleted Message: {deleted_message}")
+            embed = discord.Embed(
+                title="Deleted Message",
+                description=deleted_message["content"],
+                color=discord.Colour.blurple(),
+                timestamp=datetime.now()
+            )
+            embed.set_footer(
+                text=f"Author: {deleted_message['author']}",
+            )
+            await ctx.respond(embed=embed)
