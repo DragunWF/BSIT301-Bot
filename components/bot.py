@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 from pathlib import Path
 from components.data import Data
 
-client = discord.Bot(intents=discord.Intents.default())
+client = discord.Bot(intents=discord.Intents.all())
 
 
 class Bot:
