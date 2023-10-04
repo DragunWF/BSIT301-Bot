@@ -8,12 +8,14 @@ from datetime import datetime
 class Commands:
     __guilds = Data.get_settings()["guilds"]
 
-    @client.slash_command(guild_ids=__guilds)
+    @client.slash_command(guild_ids=__guilds,
+                          description="For testing purposes")
     async def test(ctx):
         print(ctx)
-        await ctx.respond("Why hello there!")
+        await ctx.respond("This is a test message")
 
-    @client.slash_command(guild_ids=__guilds)
+    @client.slash_command(guild_ids=__guilds,
+                          description="Snipes recently deleted messages")
     async def snipe(ctx):
         deleted_message = Data.get_deleted_message()
         if deleted_message["content"] is None:
