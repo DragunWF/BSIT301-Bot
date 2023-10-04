@@ -16,6 +16,6 @@ class Commands:
         # TODO: add more like embed messages and show message author
         deleted_message = Data.get_previous_deleted_message()
         if deleted_message is None:
-            await ctx.respond(f"Deleted Message: {deleted_message}")
-        else:
             await ctx.respond("There are no deleted messages recorded!")
+        else:
+            await ctx.respond(f"Deleted Message: {deleted_message}")
