@@ -1,6 +1,6 @@
 import discord
-from dotenv import load_dotenv
 import os
+from dotenv import load_dotenv
 
 
 class MyClient(discord.Client):
