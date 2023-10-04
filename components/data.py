@@ -17,3 +17,6 @@ class Data:
 
     def get_previous_deleted_message() -> object:
         return Data.__previous_deleted_message
+
+    def set_previous_deleted_message(message_content: str) -> None:
+        Data.__previous_deleted_message = message_content
