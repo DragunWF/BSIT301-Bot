@@ -21,4 +21,4 @@ class Bot:
     @staticmethod
     def run() -> None:
         load_dotenv()
-        Bot.client.run(os.getenv("TOKEN"))
+        client.run(os.getenv("TOKEN"))
