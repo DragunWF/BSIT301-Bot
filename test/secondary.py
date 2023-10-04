@@ -12,6 +12,16 @@ class Main:
     async def on_ready():
         print(f"Ready as {bot.user}")
 
+    @bot.event
+    async def on_message(message):
+        if message.author == bot.user:
+            return
+        print(message)
+        if message.author.name == "dragunwf":
+            await message.channel.send("Hello there, Master!")
+        else:
+            await message.channel.send("Greetings")
+
     @bot.slash_command(guild_ids=bot_guilds)
     async def hello(ctx, member: Option(discord.Member, "", required=True)):
         await ctx.respond(f"Hello {member}")
