@@ -7,7 +7,7 @@ class Data:
     __settings = json.loads(
         Path(f"{Path.cwd()}/config/settings.json").read_text()
     )
-    __previous_deleted_message = None
+    __deleted_message = {"content": None, "author": None}
 
     def get_settings() -> dict:
         return Data.__settings
@@ -15,8 +15,9 @@ class Data:
     def get_cwd() -> str:
         return Data.__cwd
 
-    def get_previous_deleted_message() -> str:
-        return Data.__previous_deleted_message
+    def get_deleted_message() -> dict:
+        return Data.__deleted_message
 
-    def set_previous_deleted_message(message_content: str) -> None:
-        Data.__previous_deleted_message = message_content
+    def set_deleted_message(content: str, author: str) -> None:
+        Data.__deleted_message["content"] = content
+        Data.__deleted_message["author"] = author
