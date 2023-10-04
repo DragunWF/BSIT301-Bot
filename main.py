@@ -1,5 +1,3 @@
-# This example requires the 'message_content' intent.
-
 import discord
 from dotenv import load_dotenv
 import os
@@ -16,9 +14,16 @@ class MyClient(discord.Client):
         await message.channel.send("Hello World!")
 
 
-intents = discord.Intents.default()
-intents.message_content = True
-load_dotenv()
+class Main:
+    @staticmethod
+    def run():
+        intents = discord.Intents.default()
+        intents.message_content = True
+        load_dotenv()
 
-client = MyClient(intents=intents)
-client.run(os.getenv("TOKEN"))
+        client = MyClient(intents=intents)
+        client.run(os.getenv("TOKEN"))
+
+
+if __name__ == '__main__':
+    Main.run()
