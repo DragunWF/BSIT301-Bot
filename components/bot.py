@@ -17,6 +17,16 @@ class Bot:
     async def on_message(message):
         if message.author == client.user:
             return
+        if message.author.name == "dragunwf":
+            await message.channel.send("Hello!")
+
+    @client.event
+    async def on_message_delete(message):
+        pass
+
+    @client.event
+    async def on_message_edit(before, after):
+        pass
 
     @staticmethod
     def run() -> None:
