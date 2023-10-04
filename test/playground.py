@@ -8,5 +8,6 @@ class Main:
         Main.__value = new_value
 
 
-Main.set_value(4)
-print(Main.get_value())
+if __name__ == "__main__":
+    Main.set_value(4)
+    print(Main.get_value())
