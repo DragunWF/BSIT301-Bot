@@ -1,9 +1,11 @@
 import os
 import discord
+
 from discord import Option
 from dotenv import load_dotenv
+from components.data import Data
 
-bot_guilds = ["1158349118897397813"]
+bot_guilds = Data.settings
 bot = discord.Bot()
 
 
