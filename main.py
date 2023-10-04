@@ -4,19 +4,18 @@ import interactions
 import json
 
 from discord.ext import commands
-from discord_slash import SlashCommand
 from pathlib import Path
 from dotenv import load_dotenv
 
 
 class MyClient(discord.Client):
-    def __init__(self, intents):
+    def __init__(self, intents) -> None:
         super().__init__(intents=intents)
 
-    async def on_ready(self):
+    async def on_ready(self) -> None:
         print(f'Logged on as {self.user}!')
 
-    async def on_message(self, message):
+    async def on_message(self, message) -> None:
         if message.author == self.user:
             return
         print(f'Message from {message.author}: {message.content}')
@@ -25,7 +24,7 @@ class MyClient(discord.Client):
 
 class Main:
     @staticmethod
-    def run():
+    def run() -> None:
         load_dotenv()
 
         intents = discord.Intents.default()
