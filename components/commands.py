@@ -73,3 +73,10 @@ class Commands:
                 description=f"Before:\n{before}\nAfter:\n{after}",
                 author=edited_message["author"]
             ))
+
+    @client.slash_command(guild_ids=__guilds,
+                          description="Displays the player leaderboard by points")
+    async def leaderboard(ctx):
+        # TODO: Implement leaderboards
+        embed = discord.Embed()
+        await ctx.respond(embed=embed)
