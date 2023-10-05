@@ -16,10 +16,15 @@ class Database:
             # TODO: Implement users update for points in database
             pass
 
-    def get_users(self) -> dict:
+    def get_users(self, sort_by_points=False) -> dict:
         with sqlite3.connect(self.__path) as db:
             # TODO: Implement users select query from database
-            pass
+            if sort_by_points:
+                # Implement logic with sorted data
+                pass
+            else:
+                # Implement logic with no sorting
+                pass
 
     def get_stats(self) -> dict:
         with sqlite3.connect(self.__path) as db:
