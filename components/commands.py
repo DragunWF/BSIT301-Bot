@@ -34,7 +34,7 @@ class Commands:
             timestamp=datetime.now()
         )
         embed.set_footer(text=Data.get_settings()["web_link"])
-        await ctx.respond(embed)
+        await ctx.respond(embed=embed)
 
     @client.slash_command(guild_ids=__guilds,
                           description="Display information about BSIT301-Bot")
@@ -103,8 +103,8 @@ class Commands:
         await ctx.respond("Try out your luck with a dice roll!", view=DiceView())
 
     @client.slash_command(guild_ids=__guilds,
-                          description="Create a wheel of names then spin to randomly choose. " +
-                          "Make sure each name is separated by command. Ex: nameOne,nameTwo,nameThree")
+                          description="Let the bot choose a random name from your list of names. " +
+                          "Ex: nameOne,nameTwo,nameThree")
     async def name_picker(ctx, names: str):
         wheel_of_names = tuple(map(str.strip, names.split(",")))
         if len(wheel_of_names) <= 1:
