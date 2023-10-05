@@ -8,6 +8,7 @@ from .bot import client
 from .data import Data
 from .misc.dice_game import DiceView
 from utils.utils import Utils
+from utils.sql_database import Database
 
 
 class Commands:
