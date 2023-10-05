@@ -42,6 +42,8 @@ class Commands:
         )
         # TODO: Make a replit web server then replace this placeholder link with a real one
         embed.set_footer(text=Data.get_settings()["web_link"])
+        # TODO: Set image to bot profile picture
+        embed.set_image("")
         await ctx.respond(embed=embed)
 
     @client.slash_command(guild_ids=__guilds,
