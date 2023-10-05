@@ -17,3 +17,8 @@ class Utils:
         )
         embed.set_footer(f"Author: {author}")
         return embed
+
+    @staticmethod
+    def get_random_embed_color() -> None:
+        # TODO: Implement random embed color
+        pass
