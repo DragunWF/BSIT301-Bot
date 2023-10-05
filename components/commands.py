@@ -80,3 +80,10 @@ class Commands:
         # TODO: Implement leaderboards
         embed = discord.Embed()
         await ctx.respond(embed=embed)
+
+    @client.slash_command(guild_ids=__guilds,
+                          description="Play a game of dice!")
+    async def dice(ctx):
+        # TODO: Implement dice mini-game
+        embed = discord.Embed()
+        await ctx.respond(embed=embed)
