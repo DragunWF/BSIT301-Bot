@@ -17,13 +17,17 @@ class Bot:
     async def on_message(message):
         if message.author == client.user:
             return
-        Logger.log_message(message.content, message.author.name)
+        Logger.log_message(
+            message.content, message.author.name, message.channel.name
+        )
 
     @client.event
     async def on_message_delete(message):
         if message.author == client.user:
             return
-        Logger.log_deleted_message(message.content, message.author.name)
+        Logger.log_deleted_message(
+            message.content, message.author.name, message.channel.name
+        )
         Data.set_deleted_message(message.content, message.author.name)
 
     @client.event
@@ -31,10 +35,12 @@ class Bot:
         if before.author == client.user:
             return
         Logger.log_edited_message(
-            before.content, after.content, after.author.name
+            before.content, after.content,
+            after.author.name, after.channel.name
         )
         Data.set_edited_message(
-            before.content, after.content, after.author.name
+            before.content, after.content,
+            after.author.name, after.channel.name
         )
 
     @staticmethod
