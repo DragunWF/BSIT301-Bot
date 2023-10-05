@@ -47,8 +47,18 @@ class Commands:
         # TODO: Make a replit web server then replace this placeholder link with a real one
         embed.set_footer(text=Data.get_settings()["web_link"])
         # TODO: Set image to bot profile picture
-        embed.set_image("")
+        embed.set_image(Data.get_settings()["profile_image"])
         await ctx.respond(embed=embed)
+
+    async def stats(ctx):
+        embed = discord.Embed(
+            title="BSIT301-Bot Statistics",
+            description="",
+            color=discord.Colour.blurple(),
+            timestamp=datetime.now()
+        )
+        embed.set_image(Data.get_settings()["profile_image"])
+        embed.set_footer(text=Data.get_settings()["web_link"])
 
     @client.slash_command(guild_ids=__guilds,
                           description="Snipes recently deleted messages")
