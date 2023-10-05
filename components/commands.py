@@ -25,7 +25,8 @@ class Commands:
         embed = discord.Embed(
             title="Commands",
             description=command_list,
-            color=discord.Colour.blurple()
+            color=discord.Colour.blurple(),
+            timestamp=datetime.now()
         )
         embed.set_footer(text=Data.get_settings()["web_link"])
         return embed
@@ -35,7 +36,9 @@ class Commands:
     async def info(ctx):
         embed = discord.Embed(
             title="Information about BSIT301-Bot",
-            description=f"This bot is programmed and developed by {Data.get_settings()['username']}"
+            description=f"This bot is programmed and developed by {Data.get_settings()['username']}",
+            color=discord.Colour.blurple(),
+            timestamp=datetime.now()
         )
         # TODO: Make a replit web server then replace this placeholder link with a real one
         embed.set_footer(text=Data.get_settings()["web_link"])
