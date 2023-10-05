@@ -10,5 +10,5 @@ class DiceView(discord.ui.View):
 
 
 class DiceGame:
-    def __init__(self):
+    def __init__(self, user_id: str):
         pass
