@@ -96,5 +96,8 @@ class Commands:
                           "Make sure each name is separated by command. Ex: nameOne,nameTwo,nameThree")
     async def name_picker(ctx, names: str):
         wheel_of_names = tuple(map(str.strip, names.split(",")))
-        chosen_name = wheel_of_names[randint(0, len(wheel_of_names))]
-        await ctx.respond(f"{chosen_name} has been chosen!")
+        if len(wheel_of_names) <= 1:
+            await ctx.respond("You must choose more than one name!")
+        else:
+            chosen_name = wheel_of_names[randint(0, len(wheel_of_names))]
+            await ctx.respond(f"{chosen_name} has been chosen!")
