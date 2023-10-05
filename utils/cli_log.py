@@ -7,7 +7,7 @@ class Logger:
 
     @staticmethod
     def __walled_print(text: str) -> None:
-        print(f"{Logger.__wall}{text}{Logger.__wall}")
+        print(f"{Logger.__wall}\n{text}\n{Logger.__wall}")
 
     @staticmethod
     def __check_channel(channel: str) -> None:
