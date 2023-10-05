@@ -24,9 +24,9 @@ class Commands:
     @client.slash_command(guild_ids=__guilds,
                           description="Display all commands from BSIT301-Bot")
     async def help(ctx):
-        command_list = "List:\n"
+        command_list = "## List:\n"
         for name in Commands.__commands:
-            command_list += f"- `/{name}`"
+            command_list += f"- `/{name}`\n"
         embed = discord.Embed(
             title="Commands",
             description=command_list,
