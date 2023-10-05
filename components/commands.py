@@ -29,7 +29,7 @@ class Commands:
             timestamp=datetime.now()
         )
         embed.set_footer(text=Data.get_settings()["web_link"])
-        return embed
+        await ctx.respond(embed)
 
     @client.slash_command(guild_ids=__guilds,
                           description="Display information about BSIT301-Bot")
