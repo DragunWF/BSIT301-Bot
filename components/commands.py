@@ -41,7 +41,7 @@ class Commands:
     async def info(ctx):
         embed = discord.Embed(
             title="Information about BSIT301-Bot",
-            description=f"This bot is programmed and developed by {Data.get_settings()['username']}",
+            description=f"This bot is programmed and developed by {Data.get_settings()['master_name']}",
             color=discord.Colour.blurple(),
             timestamp=datetime.now()
         )
