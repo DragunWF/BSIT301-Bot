@@ -1,9 +1,13 @@
 import discord
 
+from discord import Option
+from datetime import datetime
+from random import randint
+
 from .bot import client
 from .data import Data
+from .misc.dice_game import DiceView
 from utils.utils import Utils
-from datetime import datetime
 
 
 class Commands:
@@ -85,5 +89,12 @@ class Commands:
                           description="Play a game of dice!")
     async def dice(ctx):
         # TODO: Implement dice mini-game
-        embed = discord.Embed()
-        await ctx.respond(embed=embed)
+        await ctx.respond("Try out your luck with a dice roll!", view=DiceView())
+
+    @client.slash_command(guild_ids=__guilds,
+                          description="Create a wheel of names then spin to randomly choose. " +
+                          "Make sure each name is separated by command. Ex: nameOne,nameTwo,nameThree")
+    async def name_picker(ctx, names: str):
+        wheel_of_names = tuple(map(str.strip, names.split(",")))
+        chosen_name = wheel_of_names[randint(0, len(wheel_of_names))]
+        await ctx.respond(f"{chosen_name} has been chosen!")
