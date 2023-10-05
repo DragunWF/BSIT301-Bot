@@ -4,7 +4,14 @@ from datetime import datetime
 
 class Utils:
     def validate_args(*args, **kwargs) -> bool:
-        return all(args) and all(kwargs)
+        if all(args) and all(kwargs):
+            return True
+        ERROR_MESSAGE = "Function call contains one or more invalid arguments!"
+        try:
+            raise Exception(ERROR_MESSAGE)
+        except Exception:
+            print(ERROR_MESSAGE)
+        return False
 
     @staticmethod
     @validate_args
