@@ -19,7 +19,7 @@ class Logger:
     @Utils.validate_args
     def log_message(content: str, author: str, channel: str) -> None:
         Logger.__check_channel(channel)
-        Logger.__walled_print(f"[{author}]: {content}")
+        print(f"[{author}]: {content}")
 
     @staticmethod
     @Utils.validate_args
