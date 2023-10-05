@@ -1,4 +1,5 @@
-from discord import Embed
+import discord
+from datetime import datetime
 
 
 class Utils:
@@ -6,6 +7,13 @@ class Utils:
         return all(args) and all(kwargs)
 
     @staticmethod
-    def get_snipe_embed() -> Embed:
-        embed = Embed()
+    @validate_args
+    def get_snipe_embed(title: str, description: str, author: str) -> discord.Embed:
+        embed = discord.Embed(
+            title=title,
+            description=description,
+            color=discord.Colour.blurple(),
+            timestamp=datetime.now()
+        )
+        embed.set_footer(f"Author: {author}")
         return embed
