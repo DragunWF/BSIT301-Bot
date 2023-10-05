@@ -1,2 +1,7 @@
+import sqlite3
+
+
 class Database:
-    pass
+    @staticmethod
+    def update_stats(column: str) -> None:
+        pass
