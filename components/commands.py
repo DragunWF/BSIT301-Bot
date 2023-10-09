@@ -1,6 +1,6 @@
 import discord
 
-# Has future use for type hinting: Check documentation to learn
+# Has future use for type hinting (Option): Check documentation to learn
 from discord import Option
 from datetime import datetime
 from random import randint
