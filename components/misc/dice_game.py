@@ -1,6 +1,9 @@
 import discord
 from random import randint
 
+# TODO: Implement 5 dice rolls
+# TODO: Implement user points when given a positive roll and a loss when given a negative roll
+
 
 class DiceView(discord.ui.View):
     @discord.ui.button(label="Roll The Dice!", style=discord.ButtonStyle.primary, emoji="🎲")
