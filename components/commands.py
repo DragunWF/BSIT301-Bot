@@ -1,5 +1,6 @@
 import discord
 
+# Has future use for type hinting: Check documentation to learn
 from discord import Option
 from datetime import datetime
 from random import randint
@@ -7,6 +8,7 @@ from random import randint
 from .bot import client
 from .data import Data
 from .misc.dice_game import DiceView
+from .misc.rock_paper_scissors_game import RockPaperScissorsGame, GameState
 from utils.utils import Utils
 from utils.sql_database import Database
 
@@ -16,7 +18,7 @@ class Commands:
     __commands = ("help", "info", "snipe", "esnipe")
 
     @client.slash_command(guild_ids=__guilds,
-                          description="For testing purposes")
+                          description="Testing purpose for the developer of this bot")
     async def test(ctx):
         print(ctx)
         await ctx.respond("This is a test message")
@@ -112,3 +114,8 @@ class Commands:
         else:
             chosen_name = wheel_of_names[randint(0, len(wheel_of_names))]
             await ctx.respond(f"{chosen_name} has been chosen!")
+
+    @client.slash_command(guild_ids=__guilds,
+                          description="Play a game of rock paper scissors against A.I!")
+    async def rock_paper_scissors(ctx):
+        pass
