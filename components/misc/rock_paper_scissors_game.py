@@ -47,7 +47,10 @@ class GameState:
             self.__opponent_points += 1
         else:
             self.__player_points += 1
+
         self.__check_win()
+        if self.__winner:
+            self.end_game()
 
     def end_game(self) -> None:
         # TODO: Implement game aftermath
