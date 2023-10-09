@@ -3,6 +3,7 @@ from random import randint
 from utils.utils import Utils
 
 # TODO: Find a way to grab the user id from the user that has clicked the button
+# TODO: Give points to user when the user gets a win
 
 
 class RockPaperScissorsGame(discord.ui.View):
@@ -24,7 +25,7 @@ class RockPaperScissorsGame(discord.ui.View):
 
 class GameState:
     __choices = ("rock", "paper", "scissors")
-    __MAX_POINTS = 5
+    __MAX_POINTS = 3
     __states = []
 
     def __init__(self, player_id: str) -> None:
