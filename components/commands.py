@@ -88,7 +88,7 @@ class Commands:
             before = edited_message["content"]["before"]
             await ctx.respond(embed=Utils.get_snipe_embed(
                 title="Edited Message",
-                description=f"Before:\n{before}\nAfter:\n{after}",
+                description=f"**Before:**\n{before}\n\n**After:**\n{after}",
                 author=edited_message["author"]
             ))
 
