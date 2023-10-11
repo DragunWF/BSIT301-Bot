@@ -23,7 +23,7 @@ class Utils:
             color=discord.Colour.blurple(),
             timestamp=datetime.now()
         )
-        embed.set_footer(f"Author: {author}")
+        embed.set_footer(text=f"Author: {author}")
         return embed
 
     @staticmethod
