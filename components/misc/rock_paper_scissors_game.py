@@ -1,4 +1,7 @@
 import discord
+from discord import Button
+from discord.interactions import Interaction
+
 from random import randint
 from utils.utils import Utils
 
@@ -8,17 +11,17 @@ from utils.utils import Utils
 
 class RockPaperScissorsGame(discord.ui.View):
     @discord.ui.button(label="Rock", style=discord.ButtonStyle.primary, emoji="🎲")
-    async def button_callback(self, button, interaction):
+    async def button_callback(self, button: Button, interaction: Interaction):
         # TODO: Implement button callback
         pass
 
     @discord.ui.button(label="Paper", style=discord.ButtonStyle.primary)
-    async def button_callback(self, button, interaction):
+    async def button_callback(self, button: Button, interaction: Interaction):
         # TODO: Implement button callback
         pass
 
     @discord.ui.button(label="Scissors", style=discord.ButtonStyle.primary)
-    async def button_callback(self, button, interaction):
+    async def button_callback(self, button: Button, interaction: Interaction):
         # TODO: Implement button callback
         pass
 
