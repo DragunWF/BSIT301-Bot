@@ -3,7 +3,6 @@ from discord import Button
 from discord.interactions import Interaction
 from random import randint
 
-# TODO: Implement 5 dice rolls
 # TODO: Implement user points when given a positive roll and a loss when given a negative roll
 
 
