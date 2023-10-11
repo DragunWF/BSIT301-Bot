@@ -29,8 +29,3 @@ class DiceView(discord.ui.View):
             rolls_word = "rolls" if rolls_left > 1 else "roll"
             await interaction.response.send_message(f"You rolled a **{roll}** 🎲\n\n"
                                                     + f"You have **{rolls_left}** {rolls_word} left...")
-
-
-class DiceGame:
-    def __init__(self, user_id: str):
-        pass
