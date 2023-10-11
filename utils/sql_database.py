@@ -16,6 +16,10 @@ class Database:
             # TODO: Implement users update for points in database
             pass
 
+    def reward_points(self, user_id: str, points: int) -> None:
+        # TODO: Implement reward points for finishing games with the bot
+        pass
+
     def get_users(self, sort_by_points=False) -> dict:
         with sqlite3.connect(self.__path) as db:
             # TODO: Implement users select query from database
