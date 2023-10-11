@@ -27,7 +27,7 @@ class Data:
         return Data.__deleted_message
 
     @staticmethod
-    @Utils.validate_args
+    # @Utils.validate_args
     def set_deleted_message(content: str, author: str) -> None:
         Data.__deleted_message["content"] = content
         Data.__deleted_message["author"] = author
@@ -37,7 +37,7 @@ class Data:
         return Data.__edited_message
 
     @staticmethod
-    @Utils.validate_args
+    # @Utils.validate_args
     def set_edited_message(before: str, after: str, author: str) -> None:
         Data.__edited_message["before"] = before
         Data.__edited_message["after"] = after

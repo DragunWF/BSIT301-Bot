@@ -15,7 +15,7 @@ class Utils:
         return False
 
     @staticmethod
-    @validate_args
+    # @validate_args
     def get_snipe_embed(title: str, description: str, author: str) -> discord.Embed:
         embed = discord.Embed(
             title=title,

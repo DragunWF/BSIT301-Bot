@@ -37,7 +37,7 @@ class GameState:
         self.__ties = 0
         self.__winner = None
 
-    @Utils.validate_args
+    # @Utils.validate_args
     def game_loop(self, player_choice: str) -> None:
         ai_choice = self.__ai_choice()
         if player_choice == ai_choice:
@@ -60,7 +60,7 @@ class GameState:
     def get_player_id(self) -> str:
         return self.__player_id
 
-    @Utils.validate_args
+    # @Utils.validate_args
     def find_game_state(self, player_id: str) -> object:
         for game_state in GameState.__states:
             if game_state.get_player_id() == player_id:
@@ -80,6 +80,6 @@ class GameState:
         return GameState.__choices[randint(0, len(GameState.__choices))]
 
     @staticmethod
-    @Utils.validate_args
+    # @Utils.validate_args
     def add_game_state(player_id: str):
         GameState.__states.append(GameState(player_id))
