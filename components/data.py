@@ -39,6 +39,6 @@ class Data:
     @staticmethod
     # @Utils.validate_args
     def set_edited_message(before: str, after: str, author: str) -> None:
-        Data.__edited_message["before"] = before
-        Data.__edited_message["after"] = after
+        Data.__edited_message["content"]["before"] = before
+        Data.__edited_message["content"]["after"] = after
         Data.__edited_message["author"] = author
