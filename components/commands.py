@@ -9,7 +9,7 @@ from random import randint
 from .bot import client
 from .data import Data
 from .misc.dice_game import DiceView
-from .misc.rock_paper_scissors_game import RockPaperScissorsGame, GameState
+from .misc.rps import RockPaperScissorsGame, GameState
 from utils.utils import Utils
 from utils.sql_database import Database
 

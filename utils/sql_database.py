@@ -30,6 +30,14 @@ class Database:
                 # Implement logic with no sorting
                 pass
 
+    def get_leaderboard(self):
+        # TODO: Replace bubble sort with quick sort
+        users = self.get_users()
+        for i in range(len(users) - 1):
+            for j in range(len(users) - 1):
+                if users[j]["points"] > users[j + 1]["points"]:
+                    users[j], users[j + 1] = users[j + 1], users[j]
+
     def get_stats(self) -> dict:
         with sqlite3.connect(self.__path) as db:
             # TODO: Implement stats select query from database
