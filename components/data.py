@@ -1,9 +1,11 @@
+import discord
 import json
 from pathlib import Path
 from utils.utils import Utils
 
 
 class Data:
+    __client = discord.Bot(intents=discord.Intents.all())
     __cwd = Path.cwd()
     __settings = json.loads(
         Path(f"{Path.cwd()}/config/settings.json").read_text()
@@ -13,6 +15,10 @@ class Data:
         "content": {"after": None, "before": None},
         "author": None
     }
+
+    @staticmethod
+    def get_client() -> discord.Bot:
+        return Data.__client
 
     @staticmethod
     def get_settings() -> dict:
