@@ -6,7 +6,7 @@ from discord import Message
 from components.data import Data
 from utils.cli_log import Logger
 
-client = discord.Bot(intents=discord.Intents.all())
+client = Data.get_client()
 
 
 class Bot:
