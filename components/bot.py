@@ -26,7 +26,7 @@ class Bot:
     async def on_message_delete(message: Message):
         if message.author == client.user or message.author.bot:
             return
-        Logger.log_deleted_message(
+        await Logger.log_deleted_message(
             message.content, message.author.name, message.channel.name
         )
         Data.set_deleted_message(message.content, message.author.name)
@@ -35,7 +35,7 @@ class Bot:
     async def on_message_edit(before: Message, after: Message):
         if before.author == client.user or before.author.bot:
             return
-        Logger.log_edited_message(
+        await Logger.log_edited_message(
             before.content, after.content,
             after.author.name, after.channel.name
         )
