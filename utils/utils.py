@@ -30,3 +30,16 @@ class Utils:
     def get_random_embed_color() -> None:
         # TODO: Implement random embed color
         pass
+
+    @staticmethod
+    def get_ordinal(num: int) -> str:
+        last = num % 10
+        match last:
+            case 1:
+                return f"{num}st"
+            case 2:
+                return f"{num}nd"
+            case 3:
+                return f"{num}rd"
+            case _:
+                return f"{num}th"
