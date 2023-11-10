@@ -7,8 +7,7 @@ client = Data.get_client()
 
 
 class Logger:
-    __deleted_messages_channel = client.get_channel(111)
-    __edited_messages_channel = client.get_channel(111)
+    __channel = None
     __wall = "-" * 20  # For ASCII art
 
     @staticmethod
@@ -29,7 +28,8 @@ class Logger:
 
     @staticmethod
     # @Utils.validate_args
-    def log_deleted_message(content: str, author: str, channel: str) -> None:
+    async def log_deleted_message(content: str, author: str, channel: str) -> None:
+        deleted_messages_channel = client.get_channel(1161652691362119811)
         embed = Utils.get_snipe_embed(
             title="Deleted Message",
             description=content,
@@ -37,12 +37,13 @@ class Logger:
         )
         Logger.__check_channel(channel)
         Logger.__walled_print(f"Deleted Message by {author}\n{content}")
-        Logger.__deleted_messages_channel.send(embed=embed)
+        await deleted_messages_channel.send(embed=embed)
 
     @staticmethod
     # @Utils.validate_args
-    def log_edited_message(before: str, after: str, author: str, channel: str) -> None:
-        content = f"Before Edit: {before}\n\nAfter Edit: {after}"
+    async def log_edited_message(before: str, after: str, author: str, channel: str) -> None:
+        edited_messages_channel = client.get_channel(1161652739957342259)
+        content = f"**Before Edit:**\n {before}\n\n**After Edit:**\n {after}"
         embed = Utils.get_snipe_embed(
             title="Edited Message",
             description=content,
@@ -50,4 +51,4 @@ class Logger:
         )
         Logger.__check_channel(channel)
         Logger.__walled_print(f"Edited Message by {author}\n{content}")
-        Logger.__edited_messages_channel.send(embed=embed)
+        await edited_messages_channel.send(embed=embed)
