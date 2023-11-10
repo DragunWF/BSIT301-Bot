@@ -29,6 +29,10 @@ class Data:
         return Data.__cwd
 
     @staticmethod
+    def get_guild_id() -> int:
+        return Data.__settings["guild"]
+
+    @staticmethod
     def get_channels() -> dict:
         return Data.__settings["channels"]
 
