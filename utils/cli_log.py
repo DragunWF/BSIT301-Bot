@@ -29,7 +29,8 @@ class Logger:
     @staticmethod
     # @Utils.validate_args
     async def log_deleted_message(content: str, author: str, channel: str) -> None:
-        deleted_messages_channel = client.get_channel(1161652691362119811)
+        deleted_messages_channel = client.get_channel(
+            Data.get_channels()["deleted_messages"])
         embed = Utils.get_snipe_embed(
             title="Deleted Message",
             description=content,
@@ -42,7 +43,8 @@ class Logger:
     @staticmethod
     # @Utils.validate_args
     async def log_edited_message(before: str, after: str, author: str, channel: str) -> None:
-        edited_messages_channel = client.get_channel(1161652739957342259)
+        edited_messages_channel = client.get_channel(
+            Data.get_channels()["edited_messages"])
         content = f"**Before Edit:**\n {before}\n\n**After Edit:**\n {after}"
         embed = Utils.get_snipe_embed(
             title="Edited Message",
