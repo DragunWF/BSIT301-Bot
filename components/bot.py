@@ -3,8 +3,11 @@ import discord
 
 from dotenv import load_dotenv
 from discord import Message
+from discord import Member
+
 from components.data import Data
 from utils.cli_log import Logger
+from utils.utils import Utils
 
 client = Data.get_client()
 
@@ -43,6 +46,12 @@ class Bot:
             before.content, after.content,
             after.author.name
         )
+
+    @client.event
+    async def on_member_join(member: Member):
+        welcome_channel = client.get_channel(Data.get_channels()["welcome"])
+        guild = client.get_guild(Data.get_guild_id())
+        await welcome_channel.send(f"Welcome to BSIT301! <@{member.id}>, You are the {Utils.get_ordinal(guild.member_count)}")
 
     @staticmethod
     def run() -> None:
