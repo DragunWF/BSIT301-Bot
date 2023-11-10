@@ -51,7 +51,7 @@ class Bot:
     async def on_member_join(member: Member):
         welcome_channel = client.get_channel(Data.get_channels()["welcome"])
         guild = client.get_guild(Data.get_guild_id())
-        await welcome_channel.send(f"Welcome to BSIT301! <@{member.id}>, You are the {Utils.get_ordinal(guild.member_count)}")
+        await welcome_channel.send(f"Welcome to **BSIT301**: <@{member.id}>, you are the `{Utils.get_ordinal(guild.member_count)}` member!")
 
     @staticmethod
     def run() -> None:
