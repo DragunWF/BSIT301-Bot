@@ -30,7 +30,7 @@ class Data:
 
     @staticmethod
     def get_channels() -> dict:
-        return Data.__settings.channels
+        return Data.__settings["channels"]
 
     @staticmethod
     def get_deleted_message() -> dict:
