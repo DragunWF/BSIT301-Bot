@@ -29,6 +29,10 @@ class Data:
         return Data.__cwd
 
     @staticmethod
+    def get_channels() -> dict:
+        return Data.__settings.channels
+
+    @staticmethod
     def get_deleted_message() -> dict:
         return Data.__deleted_message
 
