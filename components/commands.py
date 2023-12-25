@@ -15,7 +15,7 @@ from utils.sql_database import Database
 
 
 class Commands:
-    __guilds = Data.get_settings()["guilds"]
+    __guilds = Data.get_settings()["guild"]
     __commands = ("help", "info", "snipe", "esnipe")
 
     @client.slash_command(guild_ids=__guilds,
